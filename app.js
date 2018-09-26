@@ -13,6 +13,8 @@ loadEventListeners();
 function loadEventListeners() {
   // Add task event
   form.addEventListener('submit', addTask);
+  // Remove Task event
+  taskList.addEventListener('click', removeTask);
 }
 
 // Add Task
@@ -41,6 +43,13 @@ function addTask(e) {
 
   //Clear input
   taskInput.value = '';
-  
+
   e.preventDefault();
+}
+
+// Remove task
+function removeTask(e) {
+  if(e.target.parentElement.classList.contains('delete-item')){
+    console.log(e.target);
+  }
 }
